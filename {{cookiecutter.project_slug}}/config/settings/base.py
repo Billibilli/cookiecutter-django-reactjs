@@ -393,7 +393,7 @@ LDAP_AUTH_USER_LOOKUP_FIELDS = ('username',)
 
 LDAP_AUTH_FORMAT_USERNAME = 'django_python3_ldap.utils.format_username_active_directory'
 
-LDAP_AUTH_ACTIVE_DIRECTORY_DOMAIN = env('LDAP_AUTH_OBJECT_CLASS', default='update')
+LDAP_AUTH_ACTIVE_DIRECTORY_DOMAIN = env('LDAP_AUTH_ACTIVE_DIRECTORY_DOMAIN', default='update')
 
 LDAP_AUTH_USER_FIELDS = env.dict('LDAP_AUTH_USER_FIELDS', default={})
 
