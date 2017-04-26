@@ -9,7 +9,7 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify
 from rest_framework_swagger.views import get_swagger_view
 
 # Overwrite post method for REST-AUTH VerifyEmailView
-from "{{ cookiecutter.project_slug }}".users.views import VerifyEmailView
+from {{ cookiecutter.project_slug }}.users.views import VerifyEmailView
 
 
 # Swagger API docs
