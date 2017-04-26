@@ -1,0 +1,85 @@
+# Wheel 0.25+ needed to install certain packages on CPython 3.5+
+# like Pillow and psycopg2
+# See http://bitly.com/wheel-building-fails-CPython-35
+# Verified bug on Python 3.5.1
+wheel==0.29.0
+
+
+# Bleeding edge Django
+django==1.10.7 # pyup: >=1.10,<1.11
+
+# Configuration
+django-environ==0.4.3
+{% if cookiecutter.use_whitenoise == 'y' -%}
+whitenoise==3.3.0
+{%- endif %}
+
+
+# Forms
+django-braces==1.11.0
+django-crispy-forms==1.6.1
+
+# Models
+django-model-utils==3.0.0
+
+# Images
+Pillow==4.1.0
+
+# Password storage
+argon2-cffi==16.3.0
+
+# For user registration, either via email or social
+# Well-built with regular release cycles!
+django-allauth==0.31.0
+
+{% if cookiecutter.windows == 'y' -%}
+# On Windows, you must download/install psycopg2 manually
+# from http://www.lfd.uci.edu/~gohlke/pythonlibs/#psycopg
+{% else %}
+# Python-PostgreSQL Database Adapter
+psycopg2==2.7.1
+{%- endif %}
+
+# Unicode slugification
+awesome-slugify==1.6.5
+
+# Time zones support
+pytz==2017.2
+
+# Redis support
+django-redis==4.7.0
+redis>=2.10.5
+
+{% if cookiecutter.use_celery == "y" %}
+celery==3.1.24
+{% endif %}
+
+{% if cookiecutter.use_compressor == "y" %}
+rcssmin==1.0.6 {% if cookiecutter.windows == 'y' %}--install-option="--without-c-extensions"{% endif %}
+django-compressor==2.1.1
+{% endif %}
+
+# Django REST Framework
+djangorestframework==3.6.2
+djangorestframework-jwt==1.9.0
+django-rest-auth==0.9.1
+django-rest-swagger==2.1.2
+Markdown==2.6.8
+django-filter==1.0.1
+
+# Django LDAP
+django-python3-ldap==0.9.11
+
+# JSONField
+jsonfield==2.0.1
+
+# Django OAUTH2
+django-oauth-toolkit==0.12.0
+
+# PyYaml
+PyYAML==3.12
+
+# Webpack Loader to connect ReactJS frontend with Django
+django-webpack-loader==0.4.1
+
+# Your custom requirements go here
