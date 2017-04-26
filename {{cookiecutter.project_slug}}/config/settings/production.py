@@ -85,7 +85,6 @@ X_FRAME_OPTIONS = 'DENY'
 {% if cookiecutter.use_whitenoise == 'y' -%}
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 {%- endif %}
-
 {% if cookiecutter.use_compressor == 'y'-%}
 # COMPRESSOR
 # ------------------------------------------------------------------------------
@@ -93,7 +92,6 @@ COMPRESS_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 COMPRESS_URL = STATIC_URL
 COMPRESS_ENABLED = env.bool('COMPRESS_ENABLED', default=True)
 {%- endif %}
-
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
