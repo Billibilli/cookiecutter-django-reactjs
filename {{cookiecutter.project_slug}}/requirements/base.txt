@@ -82,4 +82,7 @@ PyYAML==3.12
 # Webpack Loader to connect ReactJS frontend with Django
 django-webpack-loader==0.4.1
 
+# Easily customize CORS settings
+django-cors-headers==2.0.2
+
 # Your custom requirements go here
