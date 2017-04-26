@@ -8,6 +8,9 @@ from django.views import defaults as default_views
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 from rest_framework_swagger.views import get_swagger_view
 
+# Overwrite post method for REST-AUTH VerifyEmailView
+from '{{ cookiecutter.project_slug }}.users.views' import VerifyEmailView
+
 
 # Swagger API docs
 schema_view = get_swagger_view(title='{{ cookiecutter.project_name }} API')
