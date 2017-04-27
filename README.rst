@@ -102,7 +102,7 @@ First, get Cookiecutter. Trust me, it's awesome::
 
 Now run it against this repo::
 
-    $ cookiecutter ssh://git@dgdgit.chop.edu/GonzalezMA/cookiecutter-django
+    $ cookiecutter ssh://git@dgdgit.chop.edu/GonzalezMA/cookiecutter-django-reactjs
 
 You'll be prompted for some values. Provide them, then a Django project will be created for you.
 

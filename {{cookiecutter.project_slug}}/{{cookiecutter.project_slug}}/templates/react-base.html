@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% raw %}{% load staticfiles %}
 <html class="{% block html_class %}{% endblock html_class %}" lang="en">
   <head>
     <!-- Allows you to inject head elements here -->
@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="NGS, Panel">
 
-    <title>{% block head_title %}{% endblock head_title %}</title>
+    <title>{% block head_title %}{% endraw %}{{ cookiecutter.project_name }}{% raw %}{% endblock head_title %}</title>
 
     <!-- Allows you to inject CCS here -->
     {% block stylesheets %}
@@ -60,3 +60,4 @@
 
   </body>
 </html>
+{% endraw %}
