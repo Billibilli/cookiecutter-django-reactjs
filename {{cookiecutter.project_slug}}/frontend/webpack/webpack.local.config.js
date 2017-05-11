@@ -19,6 +19,8 @@ config.output = {
   publicPath: 'http://0.0.0.0:3000/js/builds/',
 };
 
+config.module.rules[0].use[0].options.plugins = ['react-hot-loader/babel'];
+
 config.plugins = [
   new webpack.HotModuleReplacementPlugin(),
   new BundleTracker({ filename: './frontend/webpack/webpack-stats.dev.json' }),
