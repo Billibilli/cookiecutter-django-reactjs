@@ -1,21 +1,39 @@
+var path = require('path');
+
 module.exports = {
 
   module: {
-    loaders: [{
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'stage-2', 'react']
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [['es2015', { modules: false }], 'stage-2', 'react'],
+              plugins: [
+                'react-hot-loader/babel'
+              ]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
-    }, {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
-    }]
+    ]
   },
 
   resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.js', '.jsx']
+    modules: [
+      path.join(__dirname, 'frontend/js/src'),
+      'node_modules'
+    ],
+    extensions: ['.js', '.jsx']
   }
 };

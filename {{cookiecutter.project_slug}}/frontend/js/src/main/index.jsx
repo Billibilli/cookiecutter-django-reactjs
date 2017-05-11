@@ -11,21 +11,18 @@ import configureStore from './Store';
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
-ReactDOM.render(
-  <AppContainer>
-    <Root store={store} history={history} />
-  </AppContainer>,
-  document.getElementById('react-root')
-);
+
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component store={store} history={history} />
+    </AppContainer>,
+    document.getElementById('react-root')
+  );
+};
+
+render(Root);
 
 if (module.hot) {
-  module.hot.accept('./Root', () => {
-    const Root = require('./Root').default;
-    ReactDOM.render(
-      <AppContainer>
-        <Root store={store} history={history} />
-      </AppContainer>,
-      document.getElementById('react-root')
-    );
-  });
+  module.hot.accept('./Root', () => { render(Root); });
 }

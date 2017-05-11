@@ -5,14 +5,14 @@ var config = require('./webpack.base.config.js');
 
 config.entry = {
   main: [
+    'react-hot-loader/patch',
     'webpack-dev-server/client?http://0.0.0.0:3000',
     'webpack/hot/only-dev-server',
-    'react-hot-loader/patch',
     path.join(__dirname, '../js/src/main/index')
   ]
 };
 
-config.devtool = 'inline-sourcemap';
+config.devtool = 'eval';
 config.output = {
   path: path.join(__dirname, '../js/builds-dev/'),
   filename: '[name]-[hash].js',
@@ -30,15 +30,13 @@ config.plugins = [
   })
 ];
 
-config.module.loaders[0].query.plugins = ['react-hot-loader/babel'];
-
 config.devServer = {
   inline: true,
-  progress: true,
   hot: true,
   historyApiFallback: true,
   host: '0.0.0.0',
-  port: 3000
+  port: 3000,
+  headers: { 'Access-Control-Allow-Origin': '*' }
 };
 
 module.exports = config;
