@@ -70,7 +70,7 @@ def make_secret_key(project_directory):
     # Determine the local_setting_file_location
     local_setting = os.path.join(
         project_directory,
-        'config/settings/local.py'
+        'django_config/settings/local.py'
     )
 
     # local.py settings file
