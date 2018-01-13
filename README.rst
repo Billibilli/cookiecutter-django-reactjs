@@ -1,3 +1,5 @@
+**NOTE: THIS HAS BEEN DEPRECATED. Use [this](https://github.com/genomics-geek/cookiecutter-django/tree/feature-integrate-cra) instead.  Integrates Facebooks create react app with Django :)**
+
 Cookiecutter Django
 =======================
 
