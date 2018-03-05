@@ -1,6 +1,4 @@
-**NOTE: THIS HAS BEEN DEPRECATED. Use https://github.com/genomics-geek/cookiecutter-django/tree/feature-integrate-cra instead.  Integrates Facebooks create react app with Django :)**
-
-Cookiecutter Django
+Cookiecutter Django Reactjs 
 =======================
 
 .. image:: https://pyup.io/repos/github/pydanny/cookiecutter-django/shield.svg
